@@ -1,6 +1,122 @@
-# Auristor Intern Trello Time Entry Extractor
+# Trello Kanban Board: Intern Project Management
 
-This tool extracts time entries from a Trello board JSON export and generates formatted summary reports. It's designed to help teams track time spent on tasks across sprints.
+This README explains how we use the free version of Trello as a Kanban board for our project management and time tracking.
+
+## Using Trello as a Kanban Board
+
+[Trello](https://trello.com) is a flexible project management tool that works perfectly as a Kanban board. The free version offers:
+
+- Unlimited cards and lists
+- Basic automation
+- Basic power-ups
+- Easy drag-and-drop functionality
+- Card-level commenting and activity logging
+- File attachments (up to 10MB per attachment)
+- Labels and due dates
+
+Our team uses Trello to visualize workflow, limit work in progress, and track time spent on tasks across sprints.
+
+## Card Structure
+
+Each card in our Trello board follows a specific structure to ensure consistency and proper time tracking:
+
+### Card Description Format
+
+Each card description should contain the following sections:
+
+#### 1. Time Estimate
+
+- Initial estimate of how long the task will take
+- Example: `Estimated time: 4 hours`
+
+#### 2. Sprint Time Entries
+
+- Format: `**Sprint <date> (<name>): <hours> hours**`
+- Example: `**Sprint 4/7 (Mahin): 2 hours**`
+- Can include multiple entries from different team members or sprints
+- Bold formatting is optional but recommended for visibility
+
+#### 3. GitHub Branch
+
+- Link to the associated GitHub branch
+- Example: `Branch: https://github.com/username/repo/tree/feature-branch`
+
+#### 4. Description
+
+- Detailed description of the task
+- Requirements and acceptance criteria
+- Any other relevant information
+
+### Subtasks Checklist
+
+Break down complex tasks into subtasks using Trello's checklist feature:
+
+- Click "Add checklist" on the card
+- Add individual items that need to be completed
+- Check off items as they are completed
+
+### Reviewers Checklist
+
+We use a second checklist specifically for code reviews:
+
+#### Reviewer Assignment
+
+- We use Trello's labels to indicate assigned reviewers
+- Each team member has a designated color label
+- Apply the label to the card to assign a reviewer
+
+#### Review Process
+
+1. Reviewer checks their name in the checklist when they've reviewed
+2. Reviewer adds a comment with their feedback:
+   - "Looks good" - Approved without changes
+   - "Needs improvement" (with details) - Minor issues to address
+   - "Has problems/bugs" (with details) - Major issues requiring fixes
+
+### Comments
+
+All feedback, including review feedback, is provided as comments on the card:
+
+- Comments maintain a chronological history of discussion
+- Use @mentions to notify specific team members
+- Attach screenshots or files to illustrate points
+- Reply to specific comments to maintain context
+
+## Swim Lanes (Lists)
+
+Our board is organized into the following swim lanes (lists):
+
+1. **Backlog** - Tasks that are defined but not yet prioritized for a sprint
+2. **To Do** - Tasks prioritized for the current sprint
+3. **In Progress** - Tasks currently being worked on (limit: 1-2 per person)
+4. **Review** - Tasks completed and awaiting code review
+5. **Done** - Tasks fully completed and approved
+6. **Blocked** - Tasks that cannot proceed due to dependencies or issues
+
+## Time Tracking
+
+We use the card description to track time entries in a structured format that can be extracted using our time entry tool. This allows us to:
+
+- Track hours spent per person per sprint
+- Generate reports for time allocation
+- Analyze productivity and effort
+- Plan future sprints more accurately
+
+The time entry extractor tool parses these entries from the Trello JSON export and generates summary reports.
+
+## Workflow
+
+1. Tasks start in the **Backlog**
+2. During sprint planning, tasks are prioritized and moved to **To Do**
+3. When work begins, the card is moved to **In Progress**
+4. Upon completion, the developer:
+   - Adds their time entry in the proper format
+   - Moves the card to **Review**
+   - Applies reviewer labels
+5. Reviewers check their name and provide feedback
+6. If changes are needed, the card returns to **In Progress**
+7. When approved, the card moves to **Done**
+8. If blocked, cards move to the **Blocked** lane with a comment explaining why
 
 ## Getting Started
 
